@@ -1,6 +1,8 @@
-<html>
-<head><title>Geometry Web App</title></head>
-<body>
+{% extends 'layout.html'%}
+{% block header%}
+<title>Geometry Web Calculator</title>
+{% endblock %}
+{% block content %}
     <h3>SENG3110 Geometry Calculator</h3>
     <h4>Please Select From the Following: </h4>
 
@@ -9,8 +11,9 @@
         <label for="sphere">Sphere</label></br>
         <input type="radio" id="cylinder" name="cylinder">
         <label for="cylinder">Cylinder</label></br>
+        <input type="radio" id="cone" name="cone">
+        <label for="cone">Cone</label></br>
         <p></p>
         <button type="submit">Make Selection</button>
     </form>
-</body>
-</html>
+{% endblock %}

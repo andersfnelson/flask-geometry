@@ -12,7 +12,7 @@ Use this as sample code for related activities.
 
 1. **Pick a location on disk and clone this code into a local repository:**
 
-    > git clone https://github.com/axbjos/geometry_calculator_web.git
+    > git clone https://github.com/andersfnelson/flask-geometry
 
     (Alternatively the new GitHub CLI could also be used)
 
@@ -61,6 +61,10 @@ This repo also contains two sample Unit Tests.  One for the cylinder.py module. 
 
 Run them by doing the following:
 
+> python coneTest.py
+
 > python cylinderTest.py
+
+> python sphereTest.py
 
 > python GeometryCalcWeb.py

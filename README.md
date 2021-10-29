@@ -52,7 +52,7 @@ Use this as sample code for related activities.
 
     Running App:
 
-    ![serverisrunning](./readmeimages/serverisrunning.png)
+    ![serverisrunning](./readmeimages/serverrunning.png)
 
 
 ## Python Unit Testing

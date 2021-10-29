@@ -7,11 +7,11 @@
     <h4>Please Select From the Following: </h4>
 
     <form action="{{ url_for("mainForm")}}" method="post">
-        <input type="radio" id="sphere" name="sphere">
+        <input type="radio" id="sphere" value="sphere" name="select">
         <label for="sphere">Sphere</label></br>
-        <input type="radio" id="cylinder" name="cylinder">
+        <input type="radio" id="cylinder" value="cylinder" name="select">
         <label for="cylinder">Cylinder</label></br>
-        <input type="radio" id="cone" name="cone">
+        <input type="radio" id="cone" value="cone" name="select">
         <label for="cone">Cone</label></br>
         <p></p>
         <button type="submit">Make Selection</button>

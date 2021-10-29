@@ -20,19 +20,22 @@ app = Flask(__name__)
 @app.route("/", methods = ["GET", "POST"])
 def mainForm():
    if request.method == "POST":
-      sphere = request.form.get("sphere")
-      cylinder = request.form.get("cylinder")
-      cone = request.form.get("cone")
-      # print("Selection was: ", sphere, cylinder) #prints to command line for trouble shooting
-      if cone == "on":
-         print("User selected cone") #prints to command line for trouble shooting
-         return redirect(url_for('coneForm'))
-      elif cylinder == "on":
-         print("User selected cylinder") #prints to command line for trouble shooting
-         return redirect(url_for('cylinderForm'))
-      elif sphere == "on":
-         print("User selected sphere") #prints to command line for trouble shooting
-         return redirect(url_for('sphereForm'))
+      try:
+         selection = request.form['select']
+         # print("Selection was: ", sphere, cylinder) #prints to command line for trouble shooting
+         if selection == "cone":
+            print("User selected cone") #prints to command line for trouble shooting
+            return redirect(url_for('coneForm'))
+         elif selection == "cylinder":
+            print("User selected cylinder") #prints to command line for trouble shooting
+            return redirect(url_for('cylinderForm'))
+         elif selection == "sphere":
+            print("User selected sphere") #prints to command line for trouble shooting
+            return redirect(url_for('sphereForm'))
+         else:
+            pass
+      except:
+         pass
    return render_template("index.html")
 
 #flask route for the cylinder calculations page

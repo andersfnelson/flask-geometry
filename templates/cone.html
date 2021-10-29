@@ -3,6 +3,7 @@
 <title>Cone</title>
 {% endblock %}
 {% block content %}
+<h1>Cone calculator</h1>
 <form action="{{ url_for("coneForm") }}" method="post">
     <label for="radius">Please Enter the radius:</label>
     <input type="text" id="radius" name="rad" placeholder="radius">
@@ -12,4 +13,28 @@
 <p></p>
     <button type="submit">Calculate cone statistics</button>
 </form>
+<div id="results">
+    {% if radius %}
+    <h2>Radius was: {{radius}}</h2>
+    {% endif %}
+    {% if height %}
+    <h2>Height was: {{height}}</h2>
+    {% endif %}
+    {% if vol %}
+    <h2>Volume: {{vol}}</h2>
+    {% endif %}
+    {% if sa %}
+    <h2>Surface area: {{sa}}</h2>
+    {% endif %}
+    {% if lsa %}
+    <h2>Lateral surface area: {{lsa}}</h2>
+    {% endif %}
+    {% if tbsa %}
+    <h2>Top or bottom surface area: {{tbsa}}</h2>
+    {% endif %}
+    {% if slant %}
+    <h2>The slant: {{slant}}</h2>
+    {% endif %}
+
+</div>
 {% endblock %}

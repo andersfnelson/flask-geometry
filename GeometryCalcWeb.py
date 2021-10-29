@@ -50,7 +50,7 @@ def cylinderForm():
        sa = cylinder.surface_area(int(radius), int(height))
        lsa = cylinder.lateral_surface_area(int(radius), int(height))
        tbsa = cylinder.top_bottom_surface_area(int(radius))
-       return render_template("index.html", vol=vol, sa=sa, lsa=lsa, tbsa=tbsa)
+       return render_template("cylinder.html", vol=vol, sa=sa, lsa=lsa, tbsa=tbsa, radius=radius, height=height)
    return render_template("cylinder.html")
 
 #more code here for the rest of the calculators: sphere, cube, etc.
@@ -67,7 +67,7 @@ def coneForm():
        sa = cone.surface_area(int(radius), int(height))
        lsa = cone.lateral_surface_area(int(radius), int(height))
       #  return "User entered: Radius "+ str(radius) + " and Height: " + str(height) + ". <p>The Volume is: " + str(vol)
-       return render_template("index.html", vol=vol, sa=sa, lsa=lsa, slant=slant)
+       return render_template("cone.html", vol=vol, sa=sa, lsa=lsa, slant=slant, radius=radius, height=height)
    return render_template("cone.html")
 
 @app.route("/sphere", methods = ["GET", "POST"])
@@ -79,7 +79,7 @@ def sphereForm():
        vol = sphere.volume(int(radius))
        sa = sphere.surface_area(int(radius))
       #  return "User entered: Radius "+ str(radius) + " and Height: " + str(height) + ". <p>The Volume is: " + str(vol)
-       return render_template("index.html", vol=vol, sa=sa)
+       return render_template("sphere.html", vol=vol, sa=sa, radius=radius)
    return render_template("sphere.html")
   
 if __name__=='__main__':   #more flask plumbing so the environment starts correctly

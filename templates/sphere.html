@@ -4,5 +4,12 @@
 {% endblock %}
 
 {% block content %}
+<form action="{{ url_for("sphereForm") }}" method="post">
+    <label for="radius">Please Enter the radius:</label>
+    <input type="text" id="radius" name="rad" placeholder="radius">
+</br>
 
+<p></p>
+    <button type="submit">Calculate sphere statistics</button>
+</form>
 {% endblock %}

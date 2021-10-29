@@ -23,7 +23,7 @@ def mainForm():
       sphere = request.form.get("sphere")
       cylinder = request.form.get("cylinder")
       cone = request.form.get("cone")
-      print("Selection was: ", sphere, cylinder) #prints to command line for trouble shooting
+      # print("Selection was: ", sphere, cylinder) #prints to command line for trouble shooting
       if cone == "on":
          print("User selected cone") #prints to command line for trouble shooting
          return redirect(url_for('coneForm'))
@@ -44,7 +44,10 @@ def cylinderForm():
        # getting input with name = lname in HTML form 
        height = request.form.get("hgt") 
        vol = cylinder.volume(int(radius), int(height))
-       return "User entered: Radius "+ str(radius) + " and Height: " + str(height) + ". <p>The Volume is: " + str(vol)
+       sa = cylinder.surface_area(int(radius), int(height))
+       lsa = cylinder.lateral_surface_area(int(radius), int(height))
+       tbsa = cylinder.top_bottom_surface_area(int(radius))
+       return render_template("index.html", vol=vol, sa=sa, lsa=lsa, tbsa=tbsa)
    return render_template("cylinder.html")
 
 #more code here for the rest of the calculators: sphere, cube, etc.
@@ -57,7 +60,11 @@ def coneForm():
        # getting input with name = lname in HTML form 
        height = request.form.get("hgt") 
        vol = cone.volume(int(radius), int(height))
-       return "User entered: Radius "+ str(radius) + " and Height: " + str(height) + ". <p>The Volume is: " + str(vol)
+       slant = cone.slant(int(radius), int(height))
+       sa = cone.surface_area(int(radius), int(height))
+       lsa = cone.lateral_surface_area(int(radius), int(height))
+      #  return "User entered: Radius "+ str(radius) + " and Height: " + str(height) + ". <p>The Volume is: " + str(vol)
+       return render_template("index.html", vol=vol, sa=sa, lsa=lsa, slant=slant)
    return render_template("cone.html")
 
 @app.route("/sphere", methods = ["GET", "POST"])
@@ -66,9 +73,10 @@ def sphereForm():
        # getting input with name = fname in HTML form
        radius = request.form.get("rad")
        # getting input with name = lname in HTML form 
-       height = request.form.get("hgt") 
-       vol = cone.volume(int(radius), int(height))
-       return "User entered: Radius "+ str(radius) + " and Height: " + str(height) + ". <p>The Volume is: " + str(vol)
+       vol = sphere.volume(int(radius))
+       sa = sphere.surface_area(int(radius))
+      #  return "User entered: Radius "+ str(radius) + " and Height: " + str(height) + ". <p>The Volume is: " + str(vol)
+       return render_template("index.html", vol=vol, sa=sa)
    return render_template("sphere.html")
   
 if __name__=='__main__':   #more flask plumbing so the environment starts correctly

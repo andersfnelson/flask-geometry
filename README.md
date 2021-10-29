@@ -57,7 +57,7 @@ Use this as sample code for related activities.
 
 ## Python Unit Testing
 
-This repo also contains two sample Unit Tests.  One for the cylinder.py module.  One for the GeometryCalcWeb.py program.  It is up to the student to understand how the Unit Tests work. Reference course resources, notes taken in class, instructor demo's.
+This repo also contains four sample Unit Tests.
 
 Run them by doing the following:
 

@@ -16,4 +16,22 @@
         <p></p>
         <button type="submit">Make Selection</button>
     </form>
+    <div id="results">
+        {% if vol %}
+        <h1>Volume: {{vol}}</h1>
+        {% endif %}
+        {% if sa %}
+        <h1>Surface area: {{sa}}</h1>
+        {% endif %}
+        {% if lsa %}
+        <h1>Lateral surface area: {{lsa}}</h1>
+        {% endif %}
+        {% if tbsa %}
+        <h1>Top or bottom surface area: {{tbsa}}</h1>
+        {% endif %}
+        {% if slant %}
+        <h1>The slant: {{slant}}</h1>
+        {% endif %}
+
+    </div>
 {% endblock %}
